@@ -1,6 +1,5 @@
 require 'nokogiri'
 require 'open-uri'
-require 'byebug'
 class Scraper
   attr_reader :parsed_page
   def initialize
@@ -18,8 +17,9 @@ class Scraper
     page = 1
     per_page = jobs_list.count
     total = parsed_page.css('span.CategoryPath-total').text.gsub(',', '').to_i
-    $last_page = (total.to_f / per_page.to_f).ceil
+    last_page = (total.to_f / per_page).ceil
     sample = Loop.new(total, page)
+    puts "Overall #{total}  jobs in #{last_page} pages"
     sample.scrapper
   end
 end
@@ -29,7 +29,6 @@ class Loop < Scraper
   def initialize(total, page)
     @total = total
     @page = page
-    puts "Overall #{@total}  jobs in #{$last_page} pages"
   end
 
   def start
@@ -43,8 +42,9 @@ class Loop < Scraper
     iteration_parsed_page.css('div.SerpJob-jobCard')
   end
 
+  # rubocop: disable Layout/LineLength
   def scrapper
-    while @page <= 10
+    while @page <= 3
       iteration_jobs_list = start
       iteration_jobs_list.each do |x|
         jobs = { position: x.css('div.jobposting-title-container').css('a.card-link').text,
@@ -59,8 +59,6 @@ class Loop < Scraper
       @page += 1
       sleep(0.5)
     end
-    byebug
   end
+  # rubocop: enable Layout/LineLength
 end
-
-
