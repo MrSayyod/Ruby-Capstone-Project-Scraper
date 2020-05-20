@@ -4,10 +4,10 @@
 # Ruby-Capstone-Project-Scraper
 Ruby Capstone Project - Scraper (created by Sayyod Saidov) [solo project]
 
-# WEb Scraping
+# Web Scraping
 ## Definition 
 Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites. Web scraping software may access the World Wide Web directly using the Hypertext Transfer Protocol, or through a web browser. While web scraping can be done manually by a software user, the term typically refers to automated processes implemented using a bot or web crawler. It is a form of copying, in which specific data is gathered and copied from the web, typically into a central local database or spreadsheet, for later retrieval or analysis.
-=======
+
 
 ## Techniques 
 Web scraping is the process of automatically mining data or collecting information from the World Wide Web. It is a field with active developments sharing a common goal with the semantic web vision, an ambitious initiative that still requires breakthroughs in text processing, semantic understanding, artificial intelligence and human-computer interactions. Current web scraping solutions range from the ad-hoc, requiring human effort, to fully automated systems that are able to convert entire web sites into structured information, with limitations.
@@ -17,13 +17,13 @@ The purpose of this project is to develop an scraper tool to achieve web-scrappi
 In this project, I created a scraper which extracts job advertisements for junior web developers from the [Simplyhired.com](https://www.simplyhired.com). There are more than 2000 results, so I decided to stop scraper after displaying page 10. If you want more results open `scraper.rb` and change the `line 49`.
 
 # Built With
-> - Ruby 2.7.1
-> - Nokogiri 1.11.0.rc2
-> - Open-uri
-> - Byebug 11.1.3
-> - RSpec 3.9
-> - Rubocop 0.81.0
-> - VSCode editor 1.45.1
+ - Ruby 2.7.1
+ - Nokogiri 1.11.0.rc2
+ - Open-uri
+ - Byebug 11.1.3
+ - RSpec 3.9
+ - Rubocop 0.81.0
+ - VSCode editor 1.45.1
 
 # Getting Started
 To get started, you should first get this file in your local machine by downloading this project or typing.
@@ -37,16 +37,16 @@ git clone https://github.com/MrSayyod/Ruby-Capstone-Project-Scraper.git
     Git
 
 ## Setup
->   If you have installed `Ruby` on your machine:
->   Clone the project into your local machine using `git clone` command or download the zip file.
->   Go into the project directory using `cd directory name` command.
->   Run `bundle install` to install the Gemfiles or install required gems by using `gem install <gem name>` 
->   From the root directory type `bin/main.rb` command.
->   After the project has fetched all the data from the website. It will hit the byebug debugger.
->   Also run command `list[any number you want]` to display the job advertisement for example.
->   Run command `exit` in the terminal to exit the `byebug`.
->   Run `CTRL + C` to terminate the session while extracting data.
->   Run command `rspec <file name>` to test the various methods in the classes.
+   If you have installed `Ruby` on your machine:
+   Clone the project into your local machine using `git clone` command or download the zip file.
+   Go into the project directory using `cd directory name` command.
+   Run `bundle install` to install the Gemfiles or install required gems by using `gem install <gem name>` 
+   From the root directory type `bin/main.rb` command.
+   After the project has fetched all the data from the website. It will hit the byebug debugger.
+   Also run command `list[any number you want]` to display the job advertisement for example.
+   Run command `exit` in the terminal to exit the `byebug`.
+   Run `CTRL + C` to terminate the session while extracting data.
+   Run command `rspec <file name>` to test the various methods in the classes.
    
 
 # Contributing
@@ -82,11 +82,11 @@ Give a :star2: if you like this project! :blush:
 
 📝 Copyright
 
-# Acknowledgments
+## Acknowledgments
 
-- Microverse
-- https://docs.rubocop.org/en/stable/
-- https://nokogiri.org/
+> - [Microverse](https://www.microverse.org/)
+> - [Rubocop](https://docs.rubocop.org/en/stable/)
+> - [Nokogiri](https://nokogiri.org/)
 
 # 📝 License
 
