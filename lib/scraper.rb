@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'byebug'
 class Scraper
   attr_reader :parsed_page
   def initialize
@@ -44,7 +45,8 @@ class Loop < Scraper
 
   # rubocop: disable Layout/LineLength
   def scrapper
-    while @page <= 3
+    list = []
+    while @page <= 10
       iteration_jobs_list = start
       iteration_jobs_list.each do |x|
         jobs = { position: x.css('div.jobposting-title-container').css('a.card-link').text,
@@ -54,11 +56,13 @@ class Loop < Scraper
                  salary: x.css('div.SerpJob-metaInfo').css('span.jobposting-salary').text.delete_prefix!('Estimated: ') }
         puts 'Found jobs'
         puts "Position: #{jobs[:position]} \n Company: #{jobs[:company]} \n Location: #{jobs[:location]} \n Salary: #{jobs[:salary]} \n Job link: https://www.simplyhired.com#{jobs[:url]}"
+        list.push(jobs)
         sleep(0.1)
       end
       @page += 1
       sleep(0.5)
     end
+    byebug # rubocop:disable Lint/Debugger
   end
   # rubocop: enable Layout/LineLength
 end
