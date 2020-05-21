@@ -47,6 +47,27 @@ class Loop < Scraper
     iteration_parsed_page.css('div.SerpJob-jobCard')
   end
 
+  def prompt
+    puts "Would you like to continue to see more vacancies? \n \n"
+    puts "For continue \n Type 'y' or press 'Enter' \n \n"
+    puts "To stop and quit \n Type 'n' or 'q' \n \n"
+    loop do
+      input = gets.chomp.downcase
+      if ['y', ''].include?(input) # input == 'y' || input == ''
+        @page += 1
+        break
+      elsif %w[n q].include?(input) # input == 'n' || input == 'q'
+        exit
+      else
+        puts "Oops! Invalid character! \n\n"
+        puts "For continue \n Type 'y' or press 'Enter' \n \n"
+        puts "To stop and quit \n Type 'n' or 'q' \n \n"
+        input
+      end
+      input
+    end
+  end
+
   # rubocop: disable Layout/LineLength
   def scrapper
     list = []
@@ -63,7 +84,7 @@ class Loop < Scraper
         list.push(jobs)
         sleep(0.1)
       end
-      @page += 1
+      prompt
       sleep(0.5)
     end
     byebug # rubocop:disable Lint/Debugger
