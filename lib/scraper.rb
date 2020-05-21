@@ -1,6 +1,5 @@
 require 'nokogiri'
 require 'open-uri'
-require 'byebug'
 class Scraper
   attr_reader :link
   def initialize(link)
@@ -87,7 +86,6 @@ class Loop < Scraper
       prompt
       sleep(0.5)
     end
-    byebug # rubocop:disable Lint/Debugger
   end
   # rubocop: enable Layout/LineLength
 end
