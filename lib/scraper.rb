@@ -6,7 +6,7 @@ class Scraper
   def initialize(link)
     @link = link
   end
-  
+
   def start
     url = @link
     doc = ::OpenURI.open_uri(url)
