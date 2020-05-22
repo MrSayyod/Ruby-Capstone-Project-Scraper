@@ -14,7 +14,8 @@ Web scraping is the process of automatically mining data or collecting informati
 
 # About Project
 The purpose of this project is to develop an scraper tool to achieve web-scrapping. This was achieved using Ruby, Open-uri and Nokogiri gem. Byebug debugger is used to check the values of the scrapped data from the page. 
-In this project, I created a scraper which extracts job advertisements for junior web developers from the [Simplyhired.com](https://www.simplyhired.com). There are more than 2000 results, so I decided to stop scraper after displaying page 10. If you want more results open `scraper.rb` and change the `line 49`.
+In this project, I created a scraper which extracts job advertisements for junior web developers from the [Simplyhired.com](https://www.simplyhired.com). 
+
 
 # Built With
  - Ruby 2.7.1
@@ -38,29 +39,28 @@ git clone https://github.com/MrSayyod/Ruby-Capstone-Project-Scraper.git
 
 ## Setup
    If you have installed `Ruby` on your machine:
-   Clone the project into your local machine using `git clone` command or download the zip file.
-   Go into the project directory using `cd directory name` command.
-   Run `bundle install` to install the Gemfiles or install required gems by using `gem install <gem name>` 
-   From the root directory type `bin/main.rb` command.
-   After the project has fetched all the data from the website. It will hit the byebug debugger.
-   Also run command `list[any number you want]` to display the job advertisement for example.
-   Run command `exit` in the terminal to exit the `byebug`.
-   Run `CTRL + C` to terminate the session while extracting data.
-   Run command `rspec <file name>` to test the various methods in the classes.
+   1. Clone the project into your local machine using `git clone` command or download the zip file.
+   2. Go into the project directory using `cd directory name` command.
+   3. Run `bundle install` to install the Gemfiles or install required gems by using `gem install <gem name>` 
+   4. From the root directory type `bin/main.rb` command.
+   5. Run command `rspec <file name>` to test the various methods in the classes.
    
+## Running the scraper
+    When you run the project it will show you job advertisements on the selected page, then prompts the user to see more or stop. If you want to see more results you can press the 'y' button or 'Enter/Return' key. If you want to stop or found a job that matches you, then press the 'n' or 'q' button. The scraping process will be stopped.
+    In job advertisements you can found information about job title, hiring company and its location, estimated salary per year and the link about job descriptions. If you interest in any job you can go to the job url and apply for the job.
 
 # Contributing
 
 :handshake: Contributions, issues and feature requests are welcome! 
 Start by:
 
-    Forking the project
-    Cloning the project to your local machine
-    cd into the project directory
-    Run git checkout -b your-branch-name
-    Make your contributions
-    Push your branch up to your forked repository
-    Open a Pull Request with a detailed description to the development branch of the original project for a review
+    1. Forking the project
+    2. Cloning the project to your local machine
+    3. cd into the project directory
+    4. Run git checkout -b your-branch-name
+    5. Make your contributions
+    6. Push your branch up to your forked repository
+    7. Open a Pull Request with a detailed description to the development branch of the original project for a review
 
 Please feel free to contribute to any of these!
 
