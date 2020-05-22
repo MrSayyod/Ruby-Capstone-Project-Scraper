@@ -21,6 +21,7 @@ In this project, I created a scraper which extracts job advertisements for junio
  - Ruby 2.7.1
  - Nokogiri 1.11.0.rc2
  - Open-uri
+ - Colorize 0.8.1
  - Byebug 11.1.3
  - RSpec 3.9
  - Rubocop 0.81.0

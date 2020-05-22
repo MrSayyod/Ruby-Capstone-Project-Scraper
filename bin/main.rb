@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby #rubocop:disable Lint/ScriptPermission
 require_relative '../lib/loop.rb'
+require 'colorize'
 scraper = Scraper.new('https://www.simplyhired.com/search?q=junior+web+developer&l=&job=qv7hkzh7TcZD8BEHuKv9Eguc_mML6R1OujyCtaMQug7JaEnfmK10kA')
 scraper.start
 
@@ -13,9 +14,11 @@ def prompt
       @page += 1
       break
     elsif %w[n q].include?(input)
+      puts " Hope you found your dream job! \n Thanks for using my scraper! You're on the right way)))".yellow.bold
+      puts ' Happy coding!'.green.bold
       exit
     else
-      puts "Oops! Invalid character! \n\n"
+      puts "Oops! Invalid character! \n\n".red.bold
       puts "For continue \n Type 'y' or press 'Enter' \n \n"
       puts "To stop and quit \n Type 'n' or 'q' \n \n"
       input
@@ -29,7 +32,7 @@ def info
   @scraper.start
   @total = @scraper.instance_variable_get(:@total)
   @last_page = @scraper.instance_variable_get(:@last_page)
-  puts "Overall #{@total}  jobs in #{@last_page} pages \n\n Let's see results! \n\n"
+  puts " Overall #{@total}  jobs in #{@last_page} pages \n\n Let's see results! \n\n"
   sleep(1.5)
   @page = 1
   @collect = Loop.new(@total, @page)
@@ -38,16 +41,17 @@ end
 def results
   info
   while @page <= @total
-    puts "Page Number: #{@page} \n\n"
+    puts "\t Page Number: #{@page} \n\n"
     sleep 0.5
     @collect.scrapper
     list = @collect.instance_variable_get(:@list)
     i = 0
     while i < list.count
-      puts "Found jobs \n\n"
-      puts "Position: #{list[i][:position]} \n Company: #{list[i][:company]}"
-      puts "Location: #{list[i][:location]} \n Salary: #{list[i][:salary]}"
-      puts "Job link: https://www.simplyhired.com#{list[i][:url]}"
+      puts " Found jobs \n\n"
+      puts " Position: #{list[i][:position]}".yellow.bold
+      puts " Company: #{list[i][:company]} \n Location: #{list[i][:location]}".magenta.bold
+      puts " Salary: #{list[i][:salary]}".green.bold
+      puts " Job link: https://www.simplyhired.com#{list[i][:url]}".cyan.bold
       puts ''
       sleep(0.1)
       i += 1
