@@ -1,6 +1,8 @@
 require_relative '../lib/loop.rb'
+require_relative '../lib/scraper.rb'
 
 describe Loop do
+  let(:scraper) { Scraper.new('https://www.simplyhired.com/job/T3pU3sSsP6Zh2hJp9p0YRiBsrX6vL8PNNiCnxjVS8ooM3BtRiAsZtg?q=junior+web+developer') } # rubocop:disable Layout/LineLength
   let(:value) { Loop.new(50, 1) }
 
   describe '#start' do
@@ -15,7 +17,7 @@ describe Loop do
     end
   end
 
-  describe '#scraper' do
+  describe '#scrapper' do
     it 'checks the various pages of the website and returns the job information' do
       list = [{
         position: 'Junior Web Developer',
@@ -28,7 +30,7 @@ describe Loop do
       expect(value.scraper).to eql(list)
     end
 
-    it 'checks the various pages of the website and does not returns true' do
+    it 'checks the various pages of the website and does not return true' do
       list = [{
         position: 'Junior Web Developer',
         url: '/job/T3pU3sSsP6Zh2hJp9p0YRiBsrX6vL8PNNiCnxjVS8ooM3BtRiAsZtg?q=junior+web+developer',
@@ -40,7 +42,7 @@ describe Loop do
       expect(value.scraper).not_to eql(true)
     end
 
-    it 'checks the various pages of the website and does not returns false' do
+    it 'checks the various pages of the website and does not return false' do
       list = [{
         position: 'Junior Web Developer',
         url: '/job/T3pU3sSsP6Zh2hJp9p0YRiBsrX6vL8PNNiCnxjVS8ooM3BtRiAsZtg?q=junior+web+developer',
