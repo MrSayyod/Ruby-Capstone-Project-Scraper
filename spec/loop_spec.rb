@@ -17,7 +17,7 @@ describe Loop do
     end
   end
 
-  describe '#scrapper' do
+  describe '#scraper' do
     it 'checks the various pages of the website and returns the job information' do
       list = [{
         position: 'Junior Web Developer',

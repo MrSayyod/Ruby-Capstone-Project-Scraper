@@ -15,7 +15,7 @@ class Loop < Scraper
     iteration_parsed_page.css('div.SerpJob-jobCard')
   end
 
-  def scrapper
+  def scraper
     @list = []
     iteration_jobs_list = start
     iteration_jobs_list.each do |x|

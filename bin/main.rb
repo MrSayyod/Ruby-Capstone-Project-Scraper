@@ -42,7 +42,7 @@ def results
   while @page <= @total
     puts "\t Page Number: #{@page} \n\n"
     sleep 0.5
-    @collect.scrapper
+    @collect.scraper
     list = @collect.instance_variable_get(:@list)
     i = 0
     while i < list.count
