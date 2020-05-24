@@ -42,7 +42,9 @@ git clone https://github.com/MrSayyod/Ruby-Capstone-Project-Scraper.git
    If you have installed `Ruby` on your machine:
    1. Clone the project into your local machine using `git clone` command or download the zip file.
    2. Go into the project directory using `cd directory name` command.
-   3. Run `bundle install` to install the Gemfiles or install required gems by using `gem install <gem name>` 
+   3. Install required gems by using `gem install <gem name>`
+   - `gem install nokogiri`
+   - `gem install colorize`
    4. From the root directory type `bin/main.rb` command.
    5. Run command `rspec <file name>` to test the various methods in the classes.
    
